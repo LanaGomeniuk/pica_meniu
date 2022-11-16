@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Meniu Creator</title>
+  </head>
+  <body>
+    <div class="pizza-app">
+      <h1>pizza meniu creator</h1>
+      <!-- input form -->
+      <form class="form">
+        <input
+          id="name"
+          class="input-field"
+          type="text"
+          placeholder="Enter name"
+          maxlength="30"
+          required
+        />
+        <input
+          id="price"
+          type="number"
+          class="input-field"
+          placeholder="Enter price"
+          min="0.01"
+          step="0.01"
+          max="100.00"
+          required
+        />
+        <input
+          id="toppings"
+          class="input-field"
+          type="text"
+          placeholder="Toppings"
+          maxlength="30"
+          required
+        />
+        <div class="img-container">
+          <input type="checkbox" id="pizza1" />
+          <label for="pizza1"
+            ><img class="pizza-img" src="./images/image1.jpg"
+          /></label>
+          <input type="checkbox" id="pizza2" />
+          <label for="pizza2"
+            ><img class="pizza-img" src="./images/image2.jpg"
+          /></label>
+          <input type="checkbox" id="pizza3" />
+          <label for="pizza3"
+            ><img class="pizza-img" src="./images/image3.jpg"
+          /></label>
+        </div>
+        <button id="add-btn" class="btn" type="button">add pizza</button>
+      </form>
+      <!-- end of form -->
+
+      <!-- pizza info -->
+      <div class="pizza-container">
+        <div class="pizza-list">
+        </div>
+        <button id="clear-btn" type="button" class="btn">clear meniu</button>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
