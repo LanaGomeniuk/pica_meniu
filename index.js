@@ -19,10 +19,10 @@ function addPizza(e) {
   const img = document.querySelector(".pizza-img").src;
   const id = new Date().getTime().toString();
 
-  if ((pica, price, toppings)) {
-    createListItem(id, pica, price, toppings);
+  if ((img, pica, price, toppings)) {
+    createListItem(id, img, pica, price, toppings);
     container.classList.add("show-container");
-    addToSessionlStorage(id, pica, price, toppings);
+    addToSessionlStorage(id, img, pica, price, toppings);
     form.reset();
   }
 }
@@ -51,13 +51,13 @@ function removeFromSessionStorage(id) {
 }
 
 // ==================
-function addToSessionlStorage(id, pica, price, toppings) {
+function addToSessionlStorage(id, img, pica, price, toppings) {
   const pizza = {
     id: id,
+    img: img,
     pica: pica,
     price: price,
     toppings: toppings,
-
   };
   let items = getSessionStorage();
   items.push(pizza);
@@ -76,7 +76,7 @@ function setupItems() {
   console.log(items);
   if (items.length > 0) {
     items.forEach((item) => {
-      createListItem(item.id, item.pica, item.price, item.toppings);
+      createListItem(item.id, item.img, item.pica, item.price, item.toppings);
     });
     container.classList.add("show-container");
   }
@@ -96,7 +96,7 @@ function deleteItem(e) {
   }
 }
 
-function createListItem(id, pica, price, toppings) {
+function createListItem(id, img, pica, price, toppings) {
   const element = document.createElement("article");
   element.classList.add("single-pizza");
   const attr = document.createAttribute("data-id");
@@ -104,7 +104,7 @@ function createListItem(id, pica, price, toppings) {
   element.setAttributeNode(attr);
   element.innerHTML = ` <img
               class="single-img"
-              src="./images/image2.jpg"
+              src="${img}"
               alt="picture of pizza"
             />
             <div class="pizza-info">
